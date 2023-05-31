@@ -1,34 +1,46 @@
 package com.stepdefinition;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.sikuli.script.App;
 import org.sikuli.script.FindFailed;
 import org.sikuli.script.Match;
 import org.sikuli.script.Pattern;
 import org.sikuli.script.Screen;
 
+import com.aventstack.extentreports.Status;
 import com.base.BaseClass;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Basic extends BaseClass{
 	
-	
+		
 	
 
 	@Given("user with valid credentials they login to setup")
-	public void userWithValidCredentialsTheyLoginToSetup() throws InterruptedException, FindFailed, IOException {
+	
+	public void userWithValidCredentialsTheyLoginToSetup() throws InterruptedException, FindFailed, IOException, AWTException {
 		
 ///////////////////////Installation part/////////////////////////////////////////
+
+			
 		
 Screen screen = new Screen();
 
 
-App Solsta = new App("C:\\Users\\DCKLP-037\\Desktop\\Solsta\\solsta_installer-1.2.23.exe");
+App Solsta = new App("C:\\Users\\DCKLP-072\\Desktop\\SolstaFile\\solsta_installer-1.2.23.exe");
 Solsta.open();
 Thread.sleep(5000L);
 
@@ -42,13 +54,13 @@ Thread.sleep(2000);
 screen.wait(System.getProperty("user.dir") + "\\Images\\Default1.png", 5).click();
 Thread.sleep(2000);
 
-screen.wait(System.getProperty("user.dir") + "\\Images\\Next.png", 5).click();
+screen.wait(System.getProperty("user.dir") + "\\Images\\Nextb.png", 5).click();
 Thread.sleep(2000);
 
 try {
 
 // image of the disabled element
-String disabledElementImagePath = "C:\\Users\\DCKLP-037\\eclipse-workspace\\Test\\Images\\DisabledButton.png";
+String disabledElementImagePath = "C:\\Users\\DCKLP-072\\Desktop\\SolstaFile\\Solsta1\\Images\\DisabledButton.png";
 Pattern disabledElementPattern = new Pattern(disabledElementImagePath);
 
 // disabled element on the screen
@@ -111,7 +123,7 @@ screen.wait(System.getProperty("user.dir") + "\\Images\\Close.png", 5).click();
 String[] command = { "cmd.exe", "/c", "start" };
 ProcessBuilder probuilder = new ProcessBuilder(command);
 //probuilder.directory(new File("C:\\Users\\DCKLP-037\\Desktop\\Solsta"));
-probuilder.directory(new File("C:\\Users\\DCKLP-037\\Desktop\\New folder"));
+probuilder.directory(new File("C:\\Users\\DCKLP-072\\Desktop\\New folder"));
 
 //need to change the directory name if we click any other folders
 Process process = probuilder.start();
@@ -242,6 +254,10 @@ Thread.sleep(5000);
 screen.wait(System.getProperty("user.dir") + "\\Images\\Resume1.png",10).click();
 Thread.sleep(5000);
 */
+		
+		
+		
+		
 screen.wait(System.getProperty("user.dir") + "\\Images\\DevBug.png",10).click();
 Thread.sleep(2000);
 
@@ -291,12 +307,18 @@ screen.wait(System.getProperty("user.dir") + "\\Images\\Close.png", 5).click();
 // pause time resume time  cal output -differ image
 
 		
+	
+		
+		
 		
 
 	
 	}
 	@When("user validate the application for execution")
-	public void userValidateTheApplicationForExecution() {
+	public void userValidateTheApplicationForExecution() throws IOException, AWTException {
+		
+	
+	
 		
 		
 

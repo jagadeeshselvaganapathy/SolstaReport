@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @CucumberOptions(plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 features = "src\\test\\resources\\Features",
 glue = "com.stepdefinition", 
-dryRun = true,
+dryRun = false,
 monochrome = true,
 snippets = SnippetType.CAMELCASE )
 public class TestRunner {
